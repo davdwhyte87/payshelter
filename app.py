@@ -6,7 +6,7 @@ app.config.from_pyfile('settings.py',silent=True)
 
 @app.route('/')
 def hello_world():
-    return 'Whats up nigga!'
+    return 'Whats up nigga! Thats the shit'
 #run app
 if __name__=='__main__':
     app.run()
