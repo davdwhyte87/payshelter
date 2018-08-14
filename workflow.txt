@@ -1,0 +1,38 @@
+Payshelter workflow
+--------------------
+
+-Users sign up
+-user gets a confirmation code
+-user confirms account
+-user logs in
+-user views properties
+
+-another user sells property (uploads property details)
+-seller gets await mail( Mail telling the seller to wait for property confirmation.)
+-Payshelter admins see the sell request
+-admins contact the seller and make a meeting, they see the property and documents
+-admins confirm property
+
+-user buys property
+-user pays online 
+-seller gets the info of purchase
+-buyer recieves documents and signs
+-payshelter pays seller
+-buyer/seller approves transaction
+
+renting
+--------
+-user rents a house and 
+-seller recieves mail
+-user pays online
+-payshelter pays seller
+-seller approves transaction
+-buyer approves transaction
+
+pairing
+---------
+-user rents house
+-user pays online
+-seller gets user contact
+-payshelter pays seller
+-seller/user confirms transaction

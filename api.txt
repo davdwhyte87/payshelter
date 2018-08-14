@@ -1,0 +1,87 @@
+Payshelter Api
+---------------
+
+MODULES
+.........
+User
+Property
+Admin
+
+User Module
+---------------
+-/signup [Post. Gets name,Name,Email,Phone,State,Address,Password]
+takes in input and stores data in db, generates code and sets a user as unconfirmed, sends confirmation code to user email
+
+-/confirm/:code [GET]
+takes in code and validates the owner of the code
+
+-/login [POST. Gets email, password]
+This validates the user and creates a session, creates an api token and stores it in the database(APi_token) 
+this returns the api token
+
+-/authcheck [HEADER=Auth](For only protected routes)
+this function takes the header Auth value of a request and check the owner of this token, it sets the session user id to 
+the the owner id of the token
+
+-/changepass * [POST. email,current_pass,new_pass]
+this function validates the user credentials. if valid changes the password to the new password
+
+-/user/:id * [GET]
+this returns the details of the user
+
+-/user/:id/edit * [POST. Phone,State,Address,Image]
+This edits the users data, if the image value is not empty it process the base 64 image and stores it
+
+-/user/image/:id * [GET]
+this returns an image with the $id
+
+
+Property module
+----------------
+
+-/create * [POST Location,Amount,Description,Image12345]
+This creates a property setting the session user id as the owner of the property
+
+-/pay * [POST amount,carddetails]
+This function makes payment through an api with users details, gets sesion $id and makes a transaction and marks a property
+as sold. 
+
+-/seller_confirm/transaction/:id *
+This gets the session $id and gets the transaction that matches that and the id and marks it as seller confirmed
+This is done by seller when he recieves money from payshelter
+This sends a mail
+
+-/buyer_confirm/transaction/:id *
+This gets the session $id of buyer and matches with id of transaction and marks as buyer read
+This is done by the buyer when he recieves documents for the property
+This sends info mail
+
+
+
+Admin Module
+--------------
+
+[auth]
+-/admin/confirm_transaction/:id *
+This checks if the buyer and seller confirmed is set to 1. If so set the confirmed to 1 and send  both parties a mail
+
+-/users
+This returns all the users
+
+-/transactions
+This returns all transactions
+
+-/sell_request
+This gets and returns all the properties that have the not been confirmed
+
+-/property/:id/confirm
+This confirms a property
+
+-property/:id/unconfirm
+This unconfirms a property
+
+-/property/:id/delete
+This deletes a property
+
+
+
