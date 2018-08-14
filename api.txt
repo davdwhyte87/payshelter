@@ -56,7 +56,7 @@ This gets the session $id of buyer and matches with id of transaction and marks 
 This is done by the buyer when he recieves documents for the property
 This sends info mail
 
-
+-/property/image/:id
 
 Admin Module
 --------------
