@@ -9,7 +9,7 @@ Admin
 
 User Module
 ---------------
--/signup [Post. Gets name,Name,Email,Phone,State,Address,Password]
+-/signup [Post. Gets Name,Email,Phone,State,Address,Password]
 takes in input and stores data in db, generates code and sets a user as unconfirmed, sends confirmation code to user email
 
 -/confirm/:code [GET]
