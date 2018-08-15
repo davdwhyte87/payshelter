@@ -12,7 +12,7 @@ User Module
 -/signup [Post. Gets Name,Email,Phone,State,Address,Password]
 takes in input and stores data in db, generates code and sets a user as unconfirmed, sends confirmation code to user email
 
--/confirm/:code [GET]
+-/confirm_user/:code [GET]
 takes in code and validates the owner of the code
 
 -/login [POST. Gets email, password]
@@ -35,6 +35,8 @@ This edits the users data, if the image value is not empty it process the base 6
 -/user/image/:id * [GET]
 this returns an image with the $id
 
+-/transactions * [GET]
+This gets all the transaction that a user has, it gets transactions with the session id
 
 Property module
 ----------------

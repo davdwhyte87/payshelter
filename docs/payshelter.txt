@@ -38,6 +38,14 @@ Code
 Confirmed
 Password
 
+-ApiToken
+Id
+UserId
+ApiToken
+CreatedAt
+ExpiresAt
+
+
 -Admin
 Id
 Name

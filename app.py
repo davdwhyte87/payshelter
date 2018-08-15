@@ -1,6 +1,6 @@
 from flask import Flask
 from extensions import login_manager
-from extensions import db,migrate,ma,cors
+from extensions import db,migrate,ma,cors,mail
 
 app=Flask(__name__,instance_relative_config=True)
 app.config.from_object('config.settings')
@@ -22,6 +22,7 @@ db.init_app(app)
 login_manager.init_app(app)
 ma.init_app(app)
 cors.init_app(app)
+mail.init_app(app)
 
 #run app
 if __name__=='__main__':
